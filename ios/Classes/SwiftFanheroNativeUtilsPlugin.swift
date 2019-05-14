@@ -12,5 +12,8 @@ public class SwiftFanheroNativeUtilsPlugin: NSObject, FlutterPlugin {
     if (call.method == "forcePortraitOrientation") {
       UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
     }
+    else {
+      result(FlutterMethodNotImplemented)
+    }
   }
 }
