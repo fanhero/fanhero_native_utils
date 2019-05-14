@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:fanhero_native_utils/fanhero_native_utils.dart';
 
 Future<void> main() async {
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
+
   runApp(MyApp());
 }
 
@@ -23,7 +25,8 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: FlatButton(
-            onPressed: () {
+            onPressed: () async {
+              await SystemChrome.setPreferredOrientations(DeviceOrientation.values);
               FanheroNativeUtils.forcePortraitOrientation();
             },
             child: Text('Force Portrait Orientation'),
